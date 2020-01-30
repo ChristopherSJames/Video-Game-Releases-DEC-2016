@@ -4,11 +4,11 @@
 
 ## Dataset
 
-This dataset contains sales statistics on video games released from 1980 through 2016. These statistics include sales numbers for North America, the European Union, Japan, and all others, the platform they were released for, the publisher, the content rating, and others. It also contains metacritic ratings and user ratings from games released starting in 1999. It has a total of 16,712 video games. This dataset can be found [Here](https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings).
+This dataset contains sales statistics on video games released from 1980 through 2016. These statistics include sales numbers for North America, the European Union, Japan, and all other regions, the platform they were released for, the publisher, the content rating, and others. It also contains metacritic ratings and user ratings from games released starting in 1999. It has a total of 16,712 video games. This dataset can be found [Here](https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings).
 
 The following wrangling was done to the dataset:
 1. There were 2 rows that were missing names, ones of which was also missing many other attributes. They were at indexes 659 and 14246. Since there was no way to tell what this data was, I deleted the 2 rows.
-2. There were 4 rows that contained games that were released after 2016. They were at indexes 5936, 14086, 16222, and 16,385.  Since this dataset is only supposed to contain games released up until the end of 2016, this mistake must have been made during the web scraping process. I then deleted the 4 rows.
+2. There were 4 rows that contained games that were released after 2016. They were at indexes 5936, 14086, 16222, and 16,385. Since this dataset is only supposed to contain games released up until the end of 2016, this mistake must have been made during the web scraping process. I then deleted the 4 rows.
 3. The column name 'User_Score' was of the datatype 'object'. In order to convert this to a float, I also had to deal with the 2506 rows that contained the string 'tbd'. In order to do this, I used the function 'to_numeric', and forced all non-number columns to be converted to NaNs via the 'coerced' argument.
 4. I found that within the subset of the columns 'Name', 'Platform', and 'Year_of_Release', there were 2 duplicated rows. The first was the index 14246 that was removed during the cleaning of assessment 1. The second was the index 16233. I removed the second row.
 I then stored the cleaned dataframe into a csv file called 'Video_Games_Sales_as_at_22_Dec_ 2016_master.csv'.
@@ -40,4 +40,4 @@ In North America, as well as the European Union and all other regions, the top s
 
 ## Key Insights for Presentation
 
-For the presentation, I focused how features like platform, content rating, platform, and genre would affect sales numbers. I started out showing the relationship between sales numbers and the content rating of games. Then, I showed the relationship between platform and sales. Then, I showed the relationship between sales and genre. Then, I showed the relationship between rating, plarform, and sales numbers. Finally, I showed the relationship between rating, genre, and sales numbers.
+For the presentation, I focused on how features like platform, content rating, and genre would affect sales numbers. I started out by showing the relationship between sales numbers and the content rating of games. Then, I showed the relationship between platform and sales. Then, I showed the relationship between sales and genre. Then, I showed the relationship between rating, plarform, and sales numbers. Finally, I showed the relationship between rating, genre, and sales numbers.
